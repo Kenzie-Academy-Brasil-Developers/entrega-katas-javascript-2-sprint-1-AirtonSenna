@@ -12,8 +12,8 @@ function multiply(a, b) {
 
     let result = 0;
 
-    for (let i = 0; i < b; i++) {
-        result = result + a
+    for (let i = 0; i < b; i = add(i, 1)) {
+        result = add(result, a)
     }
     return result
 }
@@ -32,7 +32,7 @@ function power(a, b) {
     let num = 1;
     let result = 0;
     
-    for (let i = 0; i < b; i++) {
+    for (let i = 0; i < b; i = add(i, 1)) {
         
         result = multiply(num, a)
 
@@ -70,12 +70,12 @@ function fibonacci(f) {
     let a = 1;
     let b = 0;
     
-    for (let i = 0; i <= f+1; i++) {
+    for (let i = 0; i <= add(f, 1); i = add(i, 1)) {
         
         if (i >= 2) { 
             
             let x = a;
-            a = a + b;
+            a = add(a, b);
             b = x;
         }
     }
